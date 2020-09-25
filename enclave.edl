@@ -1,0 +1,9 @@
+enclave{
+  trusted{
+    public int ecall_test([in, size=cmd_len] int *cmd, size_t cmd_len,
+    	       		  [out, size=data_len] char *data, size_t data_len);
+  };
+  untrusted{
+    int ocall_test([in, size=data_len] char *data, size_t data_len);
+  };
+};
